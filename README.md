@@ -1,0 +1,2 @@
+# secuaigent_aws_draft
+二宮さんが作ったアーキテクチャで自己学習
