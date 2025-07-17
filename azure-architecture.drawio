@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-03-20T00:00:00.000Z" agent="Mozilla/5.0" version="22.1.21" type="device">
+  <diagram id="azure-architecture" name="Azure Architecture">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- User -->
+        <mxCell id="user" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="360" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Azure Cloud -->
+        <mxCell id="azure-cloud" value="Azure Cloud" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="840" height="680" as="geometry" />
+        </mxCell>
+
+        <!-- Client Group -->
+        <mxCell id="client-group" value="Client" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="azure-cloud">
+          <mxGeometry x="40" y="40" width="200" height="200" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="azure-dns" value="Azure DNS" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/DNS_Zones.svg;" vertex="1" parent="client-group">
+          <mxGeometry x="20" y="40" width="64" height="64" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="azure-cdn" value="Azure CDN" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/app_services/CDN_Profiles.svg;" vertex="1" parent="client-group">
+          <mxGeometry x="20" y="120" width="64" height="64" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="storage" value="Azure Storage&#xa;(Angular)" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/storage/Storage_Accounts.svg;" vertex="1" parent="client-group">
+          <mxGeometry x="120" y="80" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- API Server Group -->
+        <mxCell id="api-server-group" value="API Server" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="azure-cloud">
+          <mxGeometry x="280" y="40" width="240" height="200" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="apim" value="API Management" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/integration/API_Management_Services.svg;" vertex="1" parent="api-server-group">
+          <mxGeometry x="20" y="40" width="64" height="64" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="aks" value="AKS&#xa;(SpringBoot)" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/containers/Kubernetes_Services.svg;" vertex="1" parent="api-server-group">
+          <mxGeometry x="140" y="40" width="64" height="64" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="azure-sql" value="Azure SQL" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/databases/SQL_Database.svg;" vertex="1" parent="api-server-group">
+          <mxGeometry x="80" y="120" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- AI Group -->
+        <mxCell id="ai-group" value="AI Services" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="azure-cloud">
+          <mxGeometry x="560" y="40" width="240" height="200" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="openai" value="Azure OpenAI" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/ai_machine_learning/Cognitive_Services.svg;" vertex="1" parent="ai-group">
+          <mxGeometry x="40" y="80" width="64" height="64" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="ai-search" value="Azure AI Search" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/ai_machine_learning/Cognitive_Search.svg;" vertex="1" parent="ai-group">
+          <mxGeometry x="140" y="80" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- Monitoring Group -->
+        <mxCell id="monitoring-group" value="Monitoring" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="azure-cloud">
+          <mxGeometry x="40" y="280" width="440" height="160" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="monitor" value="Azure Monitor" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/management_governance/Monitor.svg;" vertex="1" parent="monitoring-group">
+          <mxGeometry x="40" y="60" width="64" height="64" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="app-insights" value="Application&#xa;Insights" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/devops/Application_Insights.svg;" vertex="1" parent="monitoring-group">
+          <mxGeometry x="180" y="60" width="64" height="64" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="log-analytics" value="Log Analytics" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/analytics/Log_Analytics_Workspaces.svg;" vertex="1" parent="monitoring-group">
+          <mxGeometry x="320" y="60" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- External Services -->
+        <mxCell id="external-group" value="External Services" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="40" width="200" height="320" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="github" value="GitHub" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=img/lib/mscae/GitHub.svg;" vertex="1" parent="external-group">
+          <mxGeometry x="68" y="50" width="64" height="64" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="acr" value="Azure Container&#xa;Registry" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/containers/Container_Registries.svg;" vertex="1" parent="external-group">
+          <mxGeometry x="68" y="160" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- Connections -->
+        <!-- DNS to CDN -->
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="azure-dns" target="azure-cdn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- CDN to Storage -->
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="azure-cdn" target="storage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- APIM to AKS -->
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="apim" target="aks">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- AKS to SQL -->
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aks" target="azure-sql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- AKS to OpenAI -->
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aks" target="openai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- AKS to AI Search -->
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aks" target="ai-search">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Monitoring Connections -->
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aks" target="monitor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aks" target="app-insights">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="app-insights" target="log-analytics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- GitHub Connections -->
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="github" target="acr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="github" target="storage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="acr" target="aks">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- User Connections -->
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="user" target="azure-dns">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="user" target="apim">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="65" y="440" />
+              <mxPoint x="460" y="440" />
+            </Array>
+          </mxGeometry>
+          <mxCell style="edgeLabel;html=1;align=center;" vertex="1" connectable="0" parent="1">
+            <mxGeometry x="250" y="440" as="geometry">
+              <mxContent as="text">API Request</mxContent>
+            </mxGeometry>
+          </mxCell>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile> 

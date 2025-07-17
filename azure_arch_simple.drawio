@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" modified="2024-03-20T00:00:00.000Z" version="21.7.5" type="device">
+  <diagram id="azure-arch" name="Azure Architecture">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- User -->
+        <mxCell id="user" value="User" style="shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="30" height="60"/>
+        </mxCell>
+        
+        <!-- Azure Cloud -->
+        <mxCell id="cloud" value="Azure Cloud" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="120" y="40" width="600" height="400"/>
+        </mxCell>
+        
+        <!-- Client Components -->
+        <mxCell id="dns" value="Azure DNS" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="40" y="60" width="100" height="40"/>
+        </mxCell>
+        
+        <mxCell id="cdn" value="Azure CDN" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="40" y="120" width="100" height="40"/>
+        </mxCell>
+        
+        <mxCell id="storage" value="Azure Storage" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="40" y="180" width="100" height="40"/>
+        </mxCell>
+        
+        <!-- API Components -->
+        <mxCell id="apim" value="API Management" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="200" y="60" width="100" height="40"/>
+        </mxCell>
+        
+        <mxCell id="aks" value="AKS" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="200" y="120" width="100" height="40"/>
+        </mxCell>
+        
+        <mxCell id="sql" value="Azure SQL" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="200" y="180" width="100" height="40"/>
+        </mxCell>
+        
+        <!-- AI Components -->
+        <mxCell id="openai" value="Azure OpenAI" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="360" y="60" width="100" height="40"/>
+        </mxCell>
+        
+        <mxCell id="aisearch" value="AI Search" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="360" y="120" width="100" height="40"/>
+        </mxCell>
+        
+        <!-- Monitoring -->
+        <mxCell id="monitor" value="Azure Monitor" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="40" y="300" width="100" height="40"/>
+        </mxCell>
+        
+        <mxCell id="insights" value="App Insights" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="cloud">
+          <mxGeometry x="200" y="300" width="100" height="40"/>
+        </mxCell>
+        
+        <!-- External -->
+        <mxCell id="github" value="GitHub" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="60" width="100" height="40"/>
+        </mxCell>
+        
+        <mxCell id="acr" value="Container Registry" style="rounded=1;fillColor=#0078D4;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="760" y="120" width="100" height="40"/>
+        </mxCell>
+        
+        <!-- Simple Connections -->
+        <mxCell id="edge1" value="" style="endArrow=classic;startArrow=classic;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="user" target="dns"/>
+        <mxCell id="edge2" value="" style="endArrow=classic;startArrow=classic;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="dns" target="cdn"/>
+        <mxCell id="edge3" value="" style="endArrow=classic;startArrow=classic;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="cdn" target="storage"/>
+        <mxCell id="edge4" value="" style="endArrow=classic;startArrow=classic;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="apim" target="aks"/>
+        <mxCell id="edge5" value="" style="endArrow=classic;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="aks" target="sql"/>
+        <mxCell id="edge6" value="" style="endArrow=classic;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="aks" target="openai"/>
+        <mxCell id="edge7" value="" style="endArrow=classic;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="aks" target="aisearch"/>
+        <mxCell id="edge8" value="" style="endArrow=classic;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="aks" target="monitor"/>
+        <mxCell id="edge9" value="" style="endArrow=classic;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="aks" target="insights"/>
+        <mxCell id="edge10" value="" style="endArrow=classic;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="github" target="acr"/>
+        <mxCell id="edge11" value="" style="endArrow=classic;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="github" target="storage"/>
+        <mxCell id="edge12" value="" style="endArrow=classic;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="acr" target="aks"/>
+        <mxCell id="edge13" value="API Request" style="endArrow=classic;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="user" target="apim"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile> 
